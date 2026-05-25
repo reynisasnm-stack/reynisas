@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Personal</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffffff,#dcecff,#b9d7ff);
+overflow:hidden;
+}
+
+.container{
+width:100%;
+height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:60px 100px;
+}
+
+.left{
+width:50%;
+}
+
+.kecil{
+font-size:13px;
+font-weight:bold;
+letter-spacing:4px;
+color:#2f64ff;
+margin-bottom:15px;
+}
+
+h1{
+font-size:60px;
+line-height:1.1;
+font-weight:bold;
+color:black;
+}
+
+.biru{
+color:#0d47a1;
+}
+
+p{
+margin-top:20px;
+font-size:18px;
+line-height:30px;
+color:#555;
+}
+
+button{
+margin-top:35px;
+padding:16px 30px;
+border:none;
+border-radius:12px;
+background:#2f64ff;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:0.5s;
+box-shadow:0 5px 20px rgba(47,100,255,.4);
+}
+
+button:hover{
+transform:translateY(-5px);
+}
+
+.right{
+position:relative;
+width:40%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.right img{
+width:320px;
+height:auto;
+object-fit:contain;
+z-index:2;
+animation:naikTurun 3s infinite alternate;
+}
+
+@keyframes naikTurun{
+from{
+transform:translateY(0px);
+}
+to{
+transform:translateY(-15px);
+}
+}
+
+.box{
+position:absolute;
+padding:12px 20px;
+border-radius:12px;
+color:white;
+font-size:14px;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:1s;
+z-index:5;
+}
+
+.box1{
+top:20%;
+left:5%;
+background:#2f64ff;
+}
+
+.box2{
+bottom:30%;
+left:0%;
+background:#5a9cff;
+}
+
+.box3{
+top:15%;
+right:5%;
+background:#73adff;
+}
+
+.box4{
+bottom:25%;
+right:0%;
+background:#0d47a1;
+}
+
+@media(max-width:768px){
+
+.container{
+flex-direction:column;
+padding:20px;
+text-align:center;
+}
+
+.left{
+width:100%;
+}
+
+.right{
+margin-top:30px;
+}
+
+.right img{
+width:250px;
+}
+
+h1{
+font-size:42px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="left">
+
+<div class="kecil">
+TERUS BERKEMBANG
+</div>
+
+<h1>
+Wujudkan <br>
+<span class="biru">Impian</span><br>
+Masa Depan
+</h1>
+
+<p>
+Percaya pada setiap proses yang kamu jalani.
+Langkah kecil hari ini bisa menjadi awal
+dari pencapaian besar di masa depan.
+</p>
+
+<button>Kenali Lebih Dekat</button>
+
+</div>
+
+
+<div class="right">
+
+<img src="fotoku.png">
+
+<div class="box box1">Dream</div>
+<div class="box box2">Focus</div>
+<div class="box box3">Future</div>
+<div class="box box4">Success</div>
+
+</div>
+
+</div>
+
+<script>
+
+const boxes=document.querySelectorAll(".box");
+
+boxes.forEach(box=>{
+
+setInterval(()=>{
+
+let x=Math.random()*40-20;
+let y=Math.random()*40-20;
+
+box.style.transform=
+`translate(${x}px,${y}px)`;
+
+},2000);
+
+});
+
+</script>
+
+</body>
+</html>
